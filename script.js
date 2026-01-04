@@ -5,6 +5,7 @@ const submitBtn = document.getElementById('submitBtn');
 const emailError = document.getElementById('emailError');
 const passwordError = document.getElementById('passwordError');
 const result = document.getElementById('result');
+const togglePwd = document.getElementById('togglePwd');
 
 function validate() {
   let ok = true;
@@ -46,3 +47,13 @@ form.addEventListener('submit', (e) => {
     result.textContent = 'Login simulated — implement server-side auth.';
   }, 900);
 });
+
+// Toggle password visibility
+if (togglePwd) {
+  togglePwd.addEventListener('click', () => {
+    const show = password.type === 'password';
+    password.type = show ? 'text' : 'password';
+    togglePwd.textContent = show ? '🙈' : '👁️';
+    togglePwd.setAttribute('aria-label', show ? 'Hide password' : 'Show password');
+  });
+}

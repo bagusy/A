@@ -3,31 +3,62 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Login</title>
+  <title>Cozzy Coffee — Sign in</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="container">
-    <form id="loginForm" class="card" novalidate>
-      <h1>Sign in</h1>
+  <main class="bg">
+    <div class="wood-overlay"></div>
+    <section class="center">
+      <div class="latte">
+        <!-- Simple latte art SVG -->
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="50" cy="50" r="48" fill="#f6ead7" />
+          <g fill="#c48b5f" opacity="0.95">
+            <path d="M50 30c8 6 10 14 6 22c-4 8-12 10-18 6c-6-4-8-10-6-16c2-6 10-12 18-12z"/>
+            <path d="M58 34c6 6 6 12 2 18s-10 8-16 4s-6-8-4-14s10-12 18-8z" opacity="0.55"/>
+          </g>
+        </svg>
+      </div>
 
-      <label for="email">Email</label>
-      <input id="email" name="email" type="email" required autocomplete="username">
-      <span class="error" id="emailError"></span>
+      <form id="loginForm" class="card" novalidate>
+        <h1 class="title"><span class="cup">☕</span>Welcome back</h1>
 
-      <label for="password">Password</label>
-      <input id="password" name="password" type="password" required autocomplete="current-password" minlength="6">
-      <span class="error" id="passwordError"></span>
+        <div class="field">
+          <label for="email">Email</label>
+          <div class="inputwrap">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M2 6v12h20V6l-10 6L2 6z"/></svg>
+            <input id="email" name="email" type="email" required autocomplete="username" placeholder="you@coffee.com">
+          </div>
+          <span class="error" id="emailError"></span>
+        </div>
 
-      <label class="checkbox">
-        <input id="remember" name="remember" type="checkbox">
-        Remember me
-      </label>
+        <div class="field">
+          <label for="password">Password</label>
+          <div class="inputwrap">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 1a5 5 0 0 0-5 5v3H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-2V6a5 5 0 0 0-5-5z"/></svg>
+            <input id="password" name="password" type="password" required autocomplete="current-password" minlength="6" placeholder="Enter your password">
+            <button type="button" class="eye" id="togglePwd" aria-label="Show password">👁️</button>
+          </div>
+          <span class="error" id="passwordError"></span>
+        </div>
 
-      <button type="submit" id="submitBtn">Sign in</button>
+        <label class="checkbox">
+          <input id="remember" name="remember" type="checkbox">
+          Remember me
+        </label>
 
-      <div id="result" class="result" aria-live="polite"></div>
-    </form>
+        <button type="submit" id="submitBtn" class="primary">Sign in</button>
+
+        <div class="meta">
+          <a href="#" class="link">Create account</a>
+          <a href="#" class="small">Forgot password?</a>
+        </div>
+
+        <div id="result" class="result" aria-live="polite"></div>
+      </form>
+    </section>
   </main>
 
   <script src="script.js"></script>
