@@ -3,3 +3,7 @@
 
 /* helper class to apply Poppins where needed */
 .font-poppins { font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+
+/* Small helpers for the phone input and placeholders */
+#phoneInput::placeholder { color: #9CA3AF; }
+#result { word-break: break-word; }
