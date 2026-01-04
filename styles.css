@@ -7,3 +7,20 @@
 /* Small helpers for the phone input and placeholders */
 #phoneInput::placeholder { color: #9CA3AF; }
 #result { word-break: break-word; }
+
+/* Auth panel sliding animation */
+#authPanels { transform: translateX(0%); transition: transform 420ms cubic-bezier(.2,.9,.2,1); display:flex; }
+.auth-shift-left #authPanels { transform: translateX(-50%); }
+
+/* Make the outer container hide overflow and keep a consistent height during transition */
+.auth-wrapper { overflow: hidden; }
+
+/* Animate card height during panel switch */
+#authCard { transition: height 360ms ease; }
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+	#authPanels { flex-direction: column; width: 100%; }
+	.auth-shift-left #authPanels { transform: translateX(0%); }
+	#signInPanel, #signUpPanel { width: 100% !important; }
+}
